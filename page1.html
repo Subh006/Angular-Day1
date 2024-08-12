@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>Angular JS</title>
+</head>
+<body ng-app="myApp" ng-init="a=5;b=6;fname='Subhajeet';lname='Mohanty'; arr=[0,1,2,3,4,5,6,7,8,9]">
+    
+    <p>the area is {{a*b}}</p>
+    <p>the area is <span ng-bind="a*b"></span></p>
+    <p>Name = {{fname +' '+ lname}}</p>
+    <p>Name = <span ng-bind="fname +' '+ lname"></span></p>
+    <!-- <p>{{arr[1]}}</p> -->
+    <p ng-repeat="i in  arr">{{i}}</p>
+
+    <div ng-controller="myController">
+
+        <p ng-hide="isSpy">{{fname+age}}</p>
+        <p ng-hide="isSpy">{{fullname()}}</p>
+        <p ng-show="isSpy">{{codeName}}</p>
+
+        <div ng-repeat="emp in employees | orderBy:'-salary'">
+            <p>{{emp.fname | uppercase}}</p>
+            <p>{{emp.lname | lowercase}}</p> 
+            <p>{{emp.salary | currency}}</p>
+        </div>
+
+        <input type="text" ng-model="word">
+        <p>{{word}}</p>
+
+        <button ng-click="count=count+1">click me</button>
+        <p>Count : {{count}}</p>
+    </div>
+
+
+    
+    <script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>
